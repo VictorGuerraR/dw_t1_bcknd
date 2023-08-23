@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Agregar Estudiante</title>
+</head>
+
+<body>
+    <h1>Agregar Estudiante</h1>
+    <form method="POST" action="/add">
+        <label for="carne">Carné:</label>
+        <input type="text" name="carne" required><br>
+        <label for="nombres">Nombres:</label>
+        <input type="text" name="nombres" required><br>
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" name="apellidos" required><br>
+        <label for="direccion">Dirección:</label>
+        <input type="text" name="direccion"><br>
+        <label for="telefono">Teléfono:</label>
+        <input type="text" name="telefono"><br>
+        <label for="correo_electronico">Correo Electrónico:</label>
+        <input type="email" name="correo_electronico"><br>
+        <label for="id_tipo_sangre">Tipo de Sangre:</label>
+        <select name="id_tipo_sangre">
+            <% tiposDeSangre.forEach(tipo => { %>
+                <option value="<%= tipo.id_tipo_sangre %>"><%= tipo.sangre %></option>
+            <% }); %>
+        </select><br>
+
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" name="fecha_nacimiento" required><br>
+        
+        <button type="submit" name="submit">Agregar</button>
+    </form>
+</body>
+
+</html>
